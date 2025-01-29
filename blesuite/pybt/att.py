@@ -76,19 +76,19 @@ ATT_ERROR_CODE_NAME = {
         0x11: "Insufficient Resources"
     }
 
-ATT_PDU_OPCODE_BY_NAME = {name: opcode for opcode, name in ATT_OPCODE_NAME.iteritems()}
+ATT_PDU_OPCODE_BY_NAME = {name: opcode for opcode, name in ATT_OPCODE_NAME.items()}
 ROLE_TYPE_CENTRAL = 0x00
 ROLE_TYPE_PERIPHERAL = 0x01
 
 
 def get_att_pdu_request_opcodes():
-    req_opcodes = [opcode_tuple[0] for key, opcode_tuple in ATT_OPCODE_REQUEST_RESPONSE_ASSOCIATIONS.iteritems()]
+    req_opcodes = [opcode_tuple[0] for key, opcode_tuple in ATT_OPCODE_REQUEST_RESPONSE_ASSOCIATIONS.items()]
     req_opcodes.remove(None)
     return req_opcodes
 
 
 def get_att_pdu_response_opcodes():
-    resp_opcodes = [opcode_tuple[1] for key, opcode_tuple in ATT_OPCODE_REQUEST_RESPONSE_ASSOCIATIONS.iteritems()]
+    resp_opcodes = [opcode_tuple[1] for key, opcode_tuple in ATT_OPCODE_REQUEST_RESPONSE_ASSOCIATIONS.items()]
     resp_opcodes.remove(None)
     return resp_opcodes
 

@@ -126,14 +126,14 @@ class BLEConnectionManager(object):
         self.stack_connection = None
         self.connections = []
 
-        if role is 'central':
+        if role == 'central':
             logger.debug("creating central")
             self._create_central()
             logger.debug("creating PyBT connection")
             self._create_stack_connection(ROLE_CENTRAL)
             logger.debug("creating listeners")
             self._start_listeners()
-        elif role is 'peripheral':
+        elif role == 'peripheral':
             logger.debug("creating peripheral role")
             self._create_peripheral()
             logger.debug("creating PyBT connection")

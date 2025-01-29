@@ -39,10 +39,9 @@
 
 
 #include <Python.h>
+
 #include "bdaddr.h"
-
 #include "oui.h"
-
 static int transient = 0;
 
 static int generic_reset_device(int dd)
