@@ -104,6 +104,14 @@ Run the following command to install the python package:
 ```bash
 python3 -m build
 ```
+You'll get an error about not finding btaddr.h, so you have to go to (presumably you ran the command) _dists_ folder, and at the end of the file _SOURCES.txt_ add:
+
+tools/btaddr.h
+tools/oui.h
+
+Doing so, it is going to compile. Note that this is a temporary fix, I need to probably create a pyproject.toml instead of the outdated setup.py from Python 2.
+
+
 
 If you do not want to install the BDADDR Python API or are having issues getting it to install,
 comment out the following line in setup.py and re-run the command above:
