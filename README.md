@@ -55,6 +55,8 @@ BLESuite’s pioneering spirit was shackled by:
   
 - Someone to exorcise dependency demons
 
+- Autistic people with Bluetooth hyperfocus
+- 
 _This isn’t a project—it’s a protocol renaissance. Let’s rewrite the layers._
 
 Respects the original BLESuite’s legacy while forging tools for tomorrow’s BLE challenges.
