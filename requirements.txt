@@ -1,6 +1,0 @@
-pycrypto
-gevent
-pyshark
-prettytable
-sphinx_rtd_theme
-scapy
