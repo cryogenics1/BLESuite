@@ -66,17 +66,15 @@ by other Linux distributions, however support is not currently guaranteed.
 
 The following are requirements in order to use BLESuite:
 
-You can mostly use pip to install all of it. I still need to do a better TODO xD 
+You can mostly use pip to install all of it. 
 
 * libbluetooth-dev
 * libpython-dev
-* python-sphinx
 * gevent 
 * Scapy 
 * pycrypto
 * pyshark 
 * prettytable 
-* sphinx_rtd_theme 
 
 After installing libbluetooth-dev, libpython-dev, and python-sphinx, run the following to install the remaining Python dependencies:
 
@@ -104,7 +102,7 @@ Run the following command to install the python package:
 ```bash
 python3 -m build
 ```
-You'll get an error about not finding btaddr.h, so you have to go to (presumably you ran the command) _dists_ folder, and at the end of the _SOURCES.txt_ file add:
+You'll get an error about not finding btaddr.h, so you have to go to (presumably you ran the command) _blesuite.egg-info_ folder, and at the end of the _SOURCES.txt_ file add:
 
 ```bash
 tools/btaddr.h
@@ -122,42 +120,9 @@ ext_modules = [c_ext],
 ```
 
 
-## Future Plans
+## Future Plans (for now)
 
-
-### Full pairing support
-
-
-As of now, BLESuite can only support LE Legacy JustWorks pairing. The Security Manager has mostly outlined, but the
-remaining cryptographic programming for LESC and the alternate association models still need to be implemented.
-
-### Signed write support
-
-The ATT signed write operation is currently not supported by BLESuite. This is not a commonly used operation,
-however in order to support security mode 2, it should be supported.
-
-### Further support for private addresses
-
-BLESuite currently only supports Public and Random (static) addresses. However, Random addresses can be of two
-sub-types: Static or Private. A Random Private address can also be broken down into two sub-types not
-supported currently by BLESuite: Non-resolvable Private address and Resolvable Private address (resolved using
-IRK exchanged during pairing).
-
-As such, functionality to set these types of addresses to the host adapter is not currently exposed by BLESuite.
-Also, the ability to resolve Random resolvable addresses of a peer based on an exchanged IRK is not yet
-implemented.
-
-### Additional Tooling Built Using BLESuite
-
-With the library built, the next step is to build security assessment tooling that utilizes this library.
-
-Once such example that we have included with this library is `ble-replay`, which can take in a BLE packet
-capture and replay the GATT traffic to a target device. `ble-replay` can quickly help
-identify application layer security flaws related to replay attacks.
-
-These sorts of tools decrease the time spent manually
-analyzing packet captures and manually scripting BLE communication test cases.
 
 ### Removing Legacy Code
 
-Since the code is fairly old, it was mostly with outdated functions and packaging. Refactoring to newer PEP's might be needed.
+Currently the main goal of this project is to remove legacy code and to run with newer versions of the dependencies.
